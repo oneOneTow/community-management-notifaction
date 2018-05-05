@@ -1,0 +1,30 @@
+
+server:
+  port: 8081
+cxf:
+  path: /notifaction
+
+
+
+
+spring:
+  datasource:
+        url: jdbc:mysql://localhost:3306/gradu-desgin
+        username: root
+        password: 207416
+        driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+    type-aliases-package: vens.ai.graduate.design.authorization.entity
+    mapper-locations: classpath:mybatis_mappers/*.xml
+
+logging:
+  config: classpath:log/log4j2.xml
+
+
+#c3p0
+c3p0:
+  jdbc-url: jdbc:mysql://localhost:3306/gradu-desgin
+  user: root
+  password: 207416
+  driver-class: com.mysql.jdbc.Driver
