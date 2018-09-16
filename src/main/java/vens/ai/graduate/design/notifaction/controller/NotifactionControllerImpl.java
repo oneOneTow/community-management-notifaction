@@ -1,8 +1,15 @@
 package vens.ai.graduate.design.notifaction.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import vens.ai.graduate.design.notifaction.constant.BaseConstant;
+import vens.ai.graduate.design.notifaction.exception.BaseException;
 import vens.ai.graduate.design.notifaction.request.NotiRequest;
 import vens.ai.graduate.design.notifaction.response.NotiResponse;
+import vens.ai.graduate.design.notifaction.service.serviceImpl.NotifactionServiceImpl;
+
+import javax.mail.MessagingException;
+import java.io.UnsupportedEncodingException;
 
 /**
  * @author vens
@@ -10,12 +17,13 @@ import vens.ai.graduate.design.notifaction.response.NotiResponse;
  **/
 @Component("notiController")
 public class NotifactionControllerImpl implements NotifactionController {
-
-    public NotiResponse getResponse(NotiRequest request) {
-        System.out.println(request);
-        NotiResponse response=new NotiResponse();
-        response.setName("ok");
-        response.setAge("isok");
+    @Autowired
+    NotifactionServiceImpl notifactionService;
+    @Override
+    public NotiResponse sendMessages(NotiRequest request) throws UnsupportedEncodingException, MessagingException {
+        NotiResponse response=null;
+        response=notifactionService.sendMessages(request);
+        response.setCode(BaseConstant.RESPONSE_OK);
         return response;
     }
 }

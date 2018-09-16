@@ -1,6 +1,7 @@
 package vens.ai.graduate.design.notifaction.response;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
 /**
  * @author vens
@@ -8,30 +9,22 @@ import javax.xml.bind.annotation.XmlRootElement;
  **/
 @XmlRootElement
 public class NotiResponse {
-    String name;
-    String age;
+    List<FaildUser> faildSends;
+    String code;
 
-    public String getName() {
-        return name;
+    public String getCode() {
+        return code;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getAge() {
-        return age;
+    public List<FaildUser> getFaildSends() {
+        return faildSends;
     }
 
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "NotiResponse{" +
-                "name='" + name + '\'' +
-                ", age='" + age + '\'' +
-                '}';
+    public void setFaildSends(List<FaildUser> faildSends) {
+        this.faildSends = faildSends;
     }
 }

@@ -20,11 +20,13 @@ import java.util.Arrays;
 public class CxfConfigs {
     @Autowired
     private Bus bus;
+    @Autowired
+    NotifactionControllerImpl notifactionController;
     @Bean
     public Server rsServer(){
         JAXRSServerFactoryBean endpoint = new JAXRSServerFactoryBean();
         endpoint.setBus(bus);
-        endpoint.setServiceBeans(Arrays.<Object>asList(new NotifactionControllerImpl()));
+        endpoint.setServiceBeans(Arrays.<Object>asList(notifactionController));
         endpoint.setAddress("/");
         endpoint.setProvider(new JacksonJsonProvider());
         endpoint.setFeatures(Arrays.asList(new Swagger2Feature()));

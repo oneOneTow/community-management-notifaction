@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
-@MapperScan(basePackages = "vens.ai.graduate.design.notifaction.dao")
+@MapperScan(basePackages = "vens.ai.graduate.design.notifaction.mapper")
 public class NotifactionApplication {
     public static void main(String[]args){
         SpringApplication.run(NotifactionApplication.class,args);
