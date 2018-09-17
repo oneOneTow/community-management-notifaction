@@ -1,6 +1,6 @@
 
 server:
-  port: 8081
+  port: 8082
 cxf:
   path: /notifaction
 
@@ -13,6 +13,14 @@ spring:
         username: root
         password: 207416
         driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: notifaction
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
 
 mybatis:
     type-aliases-package: vens.ai.graduate.design.authorization.entity

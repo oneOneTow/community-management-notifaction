@@ -3,6 +3,7 @@ package vens.ai.graduate.design.notifaction;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @author vens
  * @date 2018-05-04 14:49
  **/
+@EnableDiscoveryClient
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
